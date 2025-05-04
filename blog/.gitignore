@@ -1,0 +1,54 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+.Python
+
+# Django secret files (환경변수 대체용)
+*.env
+.env.*
+
+# Database (SQLite)
+db.sqlite3
+db.sqlite3-journal
+
+# Django migration files (선택적으로 무시 가능)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# VSCode settings
+.vscode/
+
+# Mac OS
+.DS_Store
+
+# JetBrains IDE (e.g., PyCharm)
+.idea/
+
+# Log files
+*.log
+
+# Coverage, test, and build artifacts
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.tox/
+nosetests.xml
+.cache/
+*.pot
+*.pyc
+*.pyo
+.pytest_cache/
+
+# pip package list
+pip-log.txt
+
+# Node.js stuff (만약 프론트도 포함될 경우)
+node_modules/
