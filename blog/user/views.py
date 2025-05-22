@@ -1,9 +1,11 @@
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from .serializers import UserSignupSerializer, UserLoginSerialzer
+
+from rest_framework.permissions import IsAuthenticated
 
 
 @api_view(['POST'])
@@ -44,3 +46,10 @@ def login_view(request):
         return response
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def permission_view(request):
+    return Response({
+        "message": f"{request.user.username}님, 인증된 사용자입니다."
+    })
